@@ -20,15 +20,11 @@ public class Part11_1 {
 			File bfile = new File("./result.txt");
 			FileWriter fw = new FileWriter(bfile);
 			PrintWriter pw = new PrintWriter(fw);
-
 			String express = null;
 			while ((express = br.readLine()) != null) {
-//				System.out.println(express);
 				String regex = "((add)|(sub)|(max)|(min)|(doubleMe)|(muti)|(div))\\(\\d{1,}(,\\d{1,})?\\)";
-
 				Pattern p = Pattern.compile(regex);
 				Matcher m = p.matcher(express);
-
 				String result = "";
 				String express2 = express;
 				while (m.find()) {
@@ -40,7 +36,6 @@ public class Part11_1 {
 					m = p.matcher(express2);
 				}
 				pw.println(express + "=" + result);
-//				System.out.println(express + "=" + result);
 			}
 			br.close();
 			fr.close();
